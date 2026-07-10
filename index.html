@@ -185,6 +185,303 @@
 </head>
 <body>
 
+<div id="ubdg-premium-bar">
+    <div class="ubdg-glow-line"></div>
+    
+    <button onclick="closeBottomBar()" class="ubdg-close-btn" title="বন্ধ করুন">✕</button>
+
+    <div class="ubdg-wrapper">
+        <div class="ubdg-brand">
+            <div class="ubdg-pulse-dot"></div>
+            <span class="ubdg-main-title">Unity Bussid Gaming <span class="ubdg-tag">(UBDG)</span></span>
+        </div>
+
+        <div class="ubdg-grid">
+            <a href="https://youtube.com/@bdbusloveratik" target="_blank" class="ubdg-item">
+                <button class="ubdg-card-btn btn-yt">
+                    <div class="btn-overlay"></div>
+                    <span class="btn-icon">🎬</span>
+                    <span class="btn-text">BD BUS LOVER ATIK</span>
+                </button>
+            </a>
+
+            <a href="https://youtube.com/@promptarenaubdg" target="_blank" class="ubdg-item">
+                <button class="ubdg-card-btn btn-yt">
+                    <div class="btn-overlay"></div>
+                    <span class="btn-icon">🎬</span>
+                    <span class="btn-text">Prompt Arena YT</span>
+                </button>
+            </a>
+
+            <a href="https://bdbusloveratik65.github.io/Bussid-Mod-Hub-/" target="_blank" class="ubdg-item">
+                <button class="ubdg-card-btn btn-apk">
+                    <div class="btn-overlay"></div>
+                    <span class="btn-icon">📲</span>
+                    <span class="btn-text">Bussid Mod Hub APK</span>
+                </button>
+            </a>
+
+            <a href="https://bdbusloveratik65.github.io/Prompt-Arena" target="_blank" class="ubdg-item">
+                <button class="ubdg-card-btn btn-apk">
+                    <div class="btn-overlay"></div>
+                    <span class="btn-icon">📲</span>
+                    <span class="btn-text">Prompt Arena APK</span>
+                </button>
+            </a>
+        </div>
+    </div>
+</div>
+
+<style>
+    /* 🎨 নতুন আল্ট্রা প্রিমিয়াম সিএসএস স্টাইল */
+    #ubdg-premium-bar {
+        position: fixed;
+        bottom: 20px; /* ফ্লোটিং লুক দেওয়ার জন্য নিচে ফাঁকা জায়গা */
+        left: 50%;
+        transform: translate(-50%, 150%); /* নিচ থেকে উঠে আসার অ্যানিমেশন */
+        width: 95%;
+        max-width: 1300px;
+        background: linear-gradient(135deg, rgba(10, 15, 30, 0.92) 0%, rgba(5, 8, 16, 0.98) 100%);
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
+        border: 1px solid rgba(191, 149, 63, 0.25);
+        border-radius: 24px; /* আধুনিক রাউন্ডেড শেপ */
+        box-shadow: 0 20px 50px rgba(0, 0, 0, 0.8), 
+                    0 0 30px rgba(191, 149, 63, 0.1);
+        padding: 16px 50px 16px 25px;
+        z-index: 999999;
+        display: none;
+        transition: transform 0.7s cubic-bezier(0.175, 0.885, 0.32, 1.1); /* ইলাস্টিক স্লাইড আপ */
+    }
+
+    /* বারটি স্ক্রিনে অ্যাক্টিভ করার ক্লাস */
+    #ubdg-premium-bar.show {
+        display: block;
+        transform: translate(-50%, 0);
+    }
+
+    /* টপ এনিমেটেড গ্লোয়িং নিয়ন লাইন */
+    .ubdg-glow-line {
+        position: absolute;
+        top: 0; left: 10%; right: 10%;
+        height: 2px;
+        background: linear-gradient(90deg, transparent, #bf953f, #fcf6ba, #aa771c, transparent);
+        box-shadow: 0 2px 10px rgba(252, 246, 186, 0.5);
+    }
+
+    .ubdg-wrapper {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 30px;
+    }
+
+    /* ব্র্যান্ডিং সেকশন */
+    .ubdg-brand {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        white-space: nowrap;
+    }
+
+    /* লাইভ ব্লিংকিং ডট */
+    .ubdg-pulse-dot {
+        width: 8px; height: 8px;
+        background: #00ffcc;
+        border-radius: 50%;
+        box-shadow: 0 0 10px #00ffcc;
+        animation: ubdgPulse 1.5s infinite;
+    }
+
+    @keyframes ubdgPulse {
+        0% { transform: scale(0.9); opacity: 0.6; }
+        50% { transform: scale(1.2); opacity: 1; box-shadow: 0 0 15px #00ffcc; }
+        100% { transform: scale(0.9); opacity: 0.6; }
+    }
+
+    .ubdg-main-title {
+        font-size: 15px;
+        font-weight: 800;
+        letter-spacing: 1px;
+        color: #fff;
+        text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+    }
+
+    .ubdg-tag {
+        background: linear-gradient(135deg, #bf953f 0%, #fcf6ba 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+
+    /* বাটন গ্রিড লেআউট (পিসিতে ১ লাইনে পাশাপাশি ৪টি) */
+    .ubdg-grid {
+        display: flex;
+        gap: 12px;
+        flex-grow: 1;
+        justify-content: flex-end;
+    }
+
+    .ubdg-item {
+        text-decoration: none;
+        flex-grow: 1;
+        max-width: 230px;
+    }
+
+    /* ফিউচারিস্টিক থ্রিডি কার্ড বাটন */
+    .ubdg-card-btn {
+        position: relative;
+        width: 100%;
+        background: rgba(255, 255, 255, 0.02);
+        color: #e2e8f0;
+        border: 1px solid rgba(255, 255, 255, 0.06);
+        padding: 12px 16px;
+        font-size: 12px;
+        font-weight: 700;
+        border-radius: 14px;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        overflow: hidden;
+        transition: all 0.4s ease;
+    }
+
+    /* বাটনের ভেতর লাইটিং ওভারলে */
+    .btn-overlay {
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(180deg, rgba(255,255,255,0.05) 0%, transparent 100%);
+        transition: opacity 0.3s;
+    }
+
+    /* হোভার ইফেক্ট */
+    .ubdg-card-btn:hover {
+        color: #000;
+        transform: translateY(-3px);
+        border-color: transparent;
+    }
+
+    /* ইউটিউব বাটনের হোভার কালার */
+    .btn-yt:hover {
+        background: linear-gradient(135deg, #ff416c 0%, #ff4b2b 100%);
+        box-shadow: 0 8px 20px rgba(255, 75, 43, 0.4);
+    }
+
+    /* এপিকে বাটনের হোভার কালার */
+    .btn-apk:hover {
+        background: linear-gradient(135deg, #bf953f 0%, #fcf6ba 100%);
+        box-shadow: 0 8px 20px rgba(191, 149, 63, 0.4);
+    }
+
+    .btn-icon {
+        font-size: 14px;
+        z-index: 2;
+    }
+
+    .btn-text {
+        z-index: 2;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        overflow: hidden;
+    }
+
+    /* প্রিমিয়াম ক্লোজ বাটন */
+    .ubdg-close-btn {
+        position: absolute;
+        top: 50%;
+        right: 18px;
+        transform: translateY(-50%);
+        background: rgba(255,255,255,0.03);
+        border: 1px solid rgba(255,255,255,0.05);
+        width: 26px; height: 26px;
+        border-radius: 50%;
+        color: #64748b;
+        font-size: 11px;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: all 0.3s;
+    }
+
+    .ubdg-close-btn:hover {
+        color: #fff;
+        background: rgba(255, 255, 255, 0.1);
+        border-color: rgba(255, 255, 255, 0.2);
+    }
+
+    /* 📱 মোবাইল রেসপনসিভ কনফিগারেশন */
+    @media (max-width: 992px) {
+        #ubdg-premium-bar {
+            padding: 15px;
+            bottom: 10px;
+        }
+
+        .ubdg-wrapper {
+            flex-direction: column;
+            align-items: stretch;
+            gap: 12px;
+        }
+
+        .ubdg-brand {
+            justify-content: center;
+        }
+
+        /* আপনার অনুরোধ অনুযায়ী: মোবাইলে পারফেক্ট ২ কলাম ও ২ লাইনে সাজানো */
+        .ubdg-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px;
+        }
+
+        .ubdg-item {
+            max-width: 100%;
+        }
+
+        .ubdg-card-btn {
+            justify-content: center;
+            padding: 10px;
+            font-size: 11px;
+            border-radius: 12px;
+        }
+
+        .ubdg-close-btn {
+            top: 15px;
+            right: 15px;
+            transform: none;
+        }
+    }
+</style>
+
+<script>
+const ubdgBar = document.getElementById("ubdg-premium-bar");
+
+function showBottomBar() {
+    ubdgBar.style.display = "block";
+    setTimeout(() => {
+        ubdgBar.classList.add("show");
+    }, 50);
+}
+
+function closeBottomBar() {
+    ubdgBar.classList.remove("show");
+    setTimeout(() => {
+        ubdgBar.style.display = "none";
+    }, 700);
+}
+
+// ৫ সেকেন্ড পরে স্মুথ ট্রানজিশনে ভেসে উঠবে
+setTimeout(showBottomBar, 5000);
+
+// বারটি বন্ধ করা থাকলে প্রতি ৩০ সেকেন্ড পর পর চেক করে আবার ওপেন করবে
+setInterval(() => {
+    if(!ubdgBar.classList.contains("show")) {
+        showBottomBar();
+    }
+}, 30000);
+</script>
+
+  
   <!-- ✅ Premium Loader -->
   <div id="loader" class="loader-overlay">
     <div class="loader-bg-orb orb1"></div><div class="loader-bg-orb orb2"></div><div class="loader-bg-orb orb3"></div>
